@@ -1,15 +1,14 @@
-// Cheat code data for all three games, verified against 2+ independent
-// sources per entry (Rockstar-focused guides, GTA Wiki-adjacent outlets,
-// PCGamer, GamesRadar, GTABase, RDR2.org, etc).
-//
-// pc / console hold the exact code/phrase to show on each tab. Where a
-// game's cheat system doesn't actually differ between PC and console
-// (GTA IV's phone numbers, RDR2's text phrases), pc and console
-// intentionally hold the same value rather than a fabricated difference.
-// For GTA V, "console" combines the PS and Xbox button-combo strings
-// since they use different face-button names for the same input.
-// `extra` carries the equivalent in-game-phone number as a secondary,
-// easier-to-remember entry method where one exists.
+// Cheat code data for AJC's Cheat Codes.
+// Verified against 2+ independent sources per entry (Rockstar-focused
+// guides, GTA Wiki-adjacent outlets, PCGamer, GamesRadar, GTABase,
+// RDR2.org, etc). pc / console hold the exact code/phrase to show on
+// each tab. Where a game's cheat system doesn't actually differ between
+// PC and console (GTA IV's phone numbers, RDR2's text phrases), pc and
+// console intentionally hold the same value rather than a fabricated
+// difference. For GTA V, "console" combines the PS and Xbox
+// button-combo strings since they use different face-button names for
+// the same input. `extra` carries the equivalent in-game-phone number
+// as a secondary, easier-to-remember entry method where one exists.
 
 function gta5Cheat({ id, name, description, category, pc, consolePS, consoleXbox, phone, console, note }) {
   return {
@@ -23,7 +22,7 @@ function gta5Cheat({ id, name, description, category, pc, consolePS, consoleXbox
   };
 }
 
-export const cheatData = {
+const CHEAT_DATA = {
   gta5: {
     pcNote:
       'Type these on your keyboard during gameplay (or dial the phone number below on your in-game phone).',
@@ -385,7 +384,7 @@ export const cheatData = {
 
   rdr2: {
     pcNote:
-      'Pause > Settings, then press Enter to open the Cheats box and type the phrase exactly (punctuation matters, capitalization doesn\'t).',
+      "Pause > Settings, then press Enter to open the Cheats box and type the phrase exactly (punctuation matters, capitalization doesn't).",
     consoleNote:
       'Pause > Settings, then press Triangle (PS) or Y (Xbox) to open the Cheats box and enter the same phrase.',
     cheats: [
@@ -506,3 +505,24 @@ export const cheatData = {
     ],
   },
 };
+
+const GAMES = [
+  {
+    id: 'gta5',
+    title: 'Grand Theft Auto V',
+    shortTitle: 'GTA V',
+    subtitle: 'Los Santos & Blaine County',
+  },
+  {
+    id: 'gta4',
+    title: 'Grand Theft Auto IV',
+    shortTitle: 'GTA IV',
+    subtitle: 'Liberty City',
+  },
+  {
+    id: 'rdr2',
+    title: 'Red Dead Redemption 2',
+    shortTitle: 'RDR2',
+    subtitle: 'The Old West, 1899',
+  },
+];
