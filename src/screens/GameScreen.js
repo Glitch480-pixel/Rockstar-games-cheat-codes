@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, Pressable, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Pressable } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import ScreenBackground from '../components/ScreenBackground';
 import SearchBar from '../components/SearchBar';
 import PlatformToggle from '../components/PlatformToggle';
 import CheatItem from '../components/CheatItem';
@@ -42,7 +43,7 @@ export default function GameScreen({ route, navigation }) {
   };
 
   return (
-    <SafeAreaView style={[styles.flex, { backgroundColor: theme.background }]}>
+    <ScreenBackground theme={theme}>
       <StatusBar style={theme.statusBarStyle} />
 
       <View style={styles.header}>
@@ -95,7 +96,7 @@ export default function GameScreen({ route, navigation }) {
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
       />
-    </SafeAreaView>
+    </ScreenBackground>
   );
 }
 

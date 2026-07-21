@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
-import { View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts, Oswald_400Regular, Oswald_500Medium, Oswald_600SemiBold } from '@expo-google-fonts/oswald';
 import { Rye_400Regular } from '@expo-google-fonts/rye';
 import { Merriweather_400Regular } from '@expo-google-fonts/merriweather';
@@ -39,7 +39,7 @@ export default function App() {
   }
 
   return (
-    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+    <SafeAreaProvider style={{ flex: 1 }} onLayout={onLayoutRootView}>
       <ThemeProvider>
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -48,6 +48,6 @@ export default function App() {
           </Stack.Navigator>
         </NavigationContainer>
       </ThemeProvider>
-    </View>
+    </SafeAreaProvider>
   );
 }

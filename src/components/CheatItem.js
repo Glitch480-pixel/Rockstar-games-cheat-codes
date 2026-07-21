@@ -47,6 +47,12 @@ export default function CheatItem({ cheat, code, theme }) {
           {code}
         </Text>
       </View>
+
+      {cheat.extra ? (
+        <Text style={[styles.extra, { color: theme.textSecondary, fontFamily: theme.fontBody }]}>
+          {cheat.extra}
+        </Text>
+      ) : null}
     </View>
   );
 }
@@ -95,5 +101,11 @@ const styles = StyleSheet.create({
   codeText: {
     fontSize: 14,
     fontWeight: '600',
+    lineHeight: 20,
+  },
+  extra: {
+    fontSize: 11,
+    marginTop: 8,
+    fontStyle: 'italic',
   },
 });

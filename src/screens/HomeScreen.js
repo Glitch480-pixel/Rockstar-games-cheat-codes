@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import ScreenBackground from '../components/ScreenBackground';
 import GameCard from '../components/GameCard';
 import { games } from '../theme/themes';
 import { useAppTheme } from '../theme/ThemeContext';
@@ -14,7 +15,7 @@ export default function HomeScreen({ navigation }) {
   }, [navigation, resetTheme]);
 
   return (
-    <SafeAreaView style={[styles.flex, { backgroundColor: theme.background }]}>
+    <ScreenBackground theme={theme}>
       <StatusBar style={theme.statusBarStyle} />
       <View style={styles.banner}>
         <Text style={[styles.bannerTitle, { color: theme.accent }]}>AJC'S</Text>
@@ -35,7 +36,7 @@ export default function HomeScreen({ navigation }) {
           />
         ))}
       </ScrollView>
-    </SafeAreaView>
+    </ScreenBackground>
   );
 }
 
